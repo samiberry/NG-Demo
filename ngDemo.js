@@ -13,6 +13,11 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/about.html',
               controller  : 'aboutController'
 			  })
+        .when('/input', 
+              {
+              templateUrl : 'pages/input.html',
+              controller  : 'inputController'
+			  })
         .when('/contact', 
               {
               templateUrl : 'pages/contact.html',
@@ -28,6 +33,16 @@ ngDemo.controller('mainController', function($scope)
 ngDemo.controller('aboutController', function($scope) 
     {
     $scope.message = 'Look! I am an about page.';
+	});
+
+ngDemo.controller('inputController', function($scope) 
+    {
+    $scope.firstName = "";
+    $scope.lastName = "";
+    $scope.fullName = function() 
+        {
+        return $scope.firstName + " " + $scope.lastName;
+        }
 	});
 
 ngDemo.controller('contactController', function($scope) 
