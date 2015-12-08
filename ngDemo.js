@@ -1,6 +1,6 @@
-var ngDemoApp = angular.module('ngDemoApp', ['ngRoute']);
+var ngDemo = angular.module('ngDemo', ['ngRoute']);
 
-ngDemoApp.config(function($routeProvider) 
+ngDemo.config(function($routeProvider) 
     {
     $routeProvider
         .when('/', 
@@ -20,17 +20,25 @@ ngDemoApp.config(function($routeProvider)
               });
 	});
 
-ngDemoApp.controller('mainController', function($scope) 
+ngDemo.controller('mainController', function($scope) 
     {
     $scope.message = 'Everyone come and see how good I look!';
 	});
 
-ngDemoApp.controller('aboutController', function($scope) 
+ngDemo.controller('aboutController', function($scope) 
     {
     $scope.message = 'Look! I am an about page.';
 	});
 
-ngDemoApp.controller('contactController', function($scope) 
+ngDemo.controller('contactController', function($scope) 
     {
     $scope.message = 'Contact us! JK. This is just a demo.';
 	});
+
+$(document).on('click','.navbar-collapse.in',function(e)
+    {
+    if( $(e.target).is('a') ) 
+        {
+        $(this).collapse('hide');
+        }
+    });
