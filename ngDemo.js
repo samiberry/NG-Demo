@@ -8,10 +8,10 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/home.html',
               controller  : 'mainController'
 			  })
-        .when('/about', 
+        .when('/cost', 
               {
-              templateUrl : 'pages/about.html',
-              controller  : 'aboutController'
+              templateUrl : 'pages/cost.html',
+              controller  : 'costController'
 			  })
         .when('/input', 
               {
@@ -20,19 +20,20 @@ ngDemo.config(function($routeProvider)
 			  })
         .when('/contact', 
               {
-              templateUrl : 'pages/contact.html',
-              controller  : 'contactController'
+              templateUrl : 'pages/array.html',
+              controller  : 'arrayController'
               });
 	});
 
 ngDemo.controller('mainController', function($scope) 
     {
-    $scope.message = 'Everyone come and see how good I look!';
+    $scope.message = 'See what cool things Angular can do!';
 	});
 
-ngDemo.controller('aboutController', function($scope) 
+ngDemo.controller('costController', function($scope) 
     {
-    $scope.message = 'Look! I am an about page.';
+    $scope.quantity = 1;
+    $scope.price = 9.99;
 	});
 
 ngDemo.controller('inputController', function($scope) 
@@ -45,10 +46,29 @@ ngDemo.controller('inputController', function($scope)
         }
 	});
 
-ngDemo.controller('contactController', function($scope) 
+//ngDemo.controller('contactController', function($scope) 
+//    {
+//    $scope.message = 'Contact us! JK. This is just a demo.';
+//	});
+
+ngDemo.controller('arrayController', function($scope)
     {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-	});
+    $scope.chars = characters;
+
+    var characters =
+        [
+            {
+            firstName: "Fred",
+            lastName: "Flintstone",
+            image: "images/Fred.png",
+            },
+            {
+            firstName: "Wilma",
+            lastName: "Flintstone",
+            image: "images/Wilma.png",
+            }
+        ];
+   });
 
 $(document).on('click','.navbar-collapse.in',function(e)
     {
