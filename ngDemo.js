@@ -38,9 +38,7 @@ ngDemo.controller('costController', function($scope)
 
 ngDemo.controller('arrayController', function($scope)
     {
-    $scope.chars = characters;
-
-    var characters =
+    $scope.characters =
         [
             {
             firstName: "Fred",
