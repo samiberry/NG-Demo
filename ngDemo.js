@@ -13,16 +13,16 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/cost.html',
               controller  : 'costController'
 			  })
+            .when('/contact', 
+              {
+              templateUrl : 'pages/array.html',
+              controller  : 'arrayController'
+              })
         .when('/input', 
               {
               templateUrl : 'pages/input.html',
               controller  : 'inputController'
-			  })
-        .when('/contact', 
-              {
-              templateUrl : 'pages/array.html',
-              controller  : 'arrayController'
-              });
+			  });
 	});
 
 ngDemo.controller('mainController', function($scope) 
@@ -35,21 +35,6 @@ ngDemo.controller('costController', function($scope)
     $scope.quantity = 1;
     $scope.price = 9.99;
 	});
-
-ngDemo.controller('inputController', function($scope) 
-    {
-    $scope.firstName = "";
-    $scope.lastName = "";
-    $scope.fullName = function() 
-        {
-        return $scope.firstName + " " + $scope.lastName;
-        }
-	});
-
-//ngDemo.controller('contactController', function($scope) 
-//    {
-//    $scope.message = 'Contact us! JK. This is just a demo.';
-//	});
 
 ngDemo.controller('arrayController', function($scope)
     {
@@ -69,6 +54,16 @@ ngDemo.controller('arrayController', function($scope)
             }
         ];
    });
+
+ngDemo.controller('inputController', function($scope) 
+    {
+    $scope.firstName = "";
+    $scope.lastName = "";
+    $scope.fullName = function() 
+        {
+        return $scope.firstName + " " + $scope.lastName;
+        }
+	});
 
 $(document).on('click','.navbar-collapse.in',function(e)
     {
