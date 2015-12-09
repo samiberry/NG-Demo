@@ -39,7 +39,6 @@ ngDemo.controller('costController', function($scope)
 ngDemo.controller('arrayController', function($scope)
     {
     $scope.message = "It looks like this should work.";
-    alert(characters[0].firstName);
     $scope.characters =
         [
             {
