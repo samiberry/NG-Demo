@@ -38,17 +38,19 @@ ngDemo.controller('costController', function($scope)
 
 ngDemo.controller('arrayController', function($scope)
     {
+    $scope.message = "It looks like this should work.";
+    alert(characters[0].firstName);
     $scope.characters =
         [
             {
             firstName: "Fred",
             lastName: "Flintstone",
-            image: "images/Fred.png",
+            image: "images/Fred.png"
             },
             {
             firstName: "Wilma",
             lastName: "Flintstone",
-            image: "images/Wilma.png",
+            image: "images/Wilma.png"
             }
         ];
    });
