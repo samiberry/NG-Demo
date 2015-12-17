@@ -1,4 +1,8 @@
+$(window).load(function(){
+$('#myModal').modal('show');
+});
 var ngDemo = angular.module('ngDemo', ['ngRoute']);
+
 
 ngDemo.config(function($routeProvider) 
     {
@@ -13,10 +17,25 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/cost.html',
               controller  : 'costController'
 			  })
-            .when('/array', 
+            .when('/tanktops', 
               {
-              templateUrl : 'pages/array.html',
-              controller  : 'arrayController'
+              templateUrl : 'pages/tanktops.html',
+              controller  : 'tanktopsController'
+              })
+                .when('/sweater', 
+              {
+              templateUrl : 'pages/sweaters.html',
+              controller  : 'sweaterController'
+              })
+         .when('/winter', 
+              {
+              templateUrl : 'pages/pant.html',
+              controller  : 'pantController'
+              })
+           .when('/spring', 
+              {
+              templateUrl : 'pages/shoe.html',
+              controller  : 'shoeController'
               })
         .when('/input', 
               {
@@ -36,23 +55,70 @@ ngDemo.controller('costController', function($scope)
     $scope.price = 9.99;
 	});
 
-ngDemo.controller('arrayController', function($scope)
+ngDemo.controller('tanktopsController', function($scope)
     {
     $scope.characters =
         [
             {
-            firstName: "Fred",
-            lastName: "Flintstone",
-            image: "images/Fred.png"
-            },
-            {
-            firstName: "Wilma",
-            lastName: "Flintstone",
-            image: "images/Wilma.png"
+     
             }
         ];
    });
-
+ngDemo.controller('sweaterController', function($scope)
+    {
+    $scope.sweaterclothes =
+        [
+            {
+                articleOfClothing: "Mystery Sweater",
+                price: "$10.00",
+                image: "Images/fallmysterysweater.jpg"
+            },
+                    {
+                articleOfClothing: "Pineapple Sweatshirt",
+                price: "$15.00",
+                image: "Images/pineapplesweater.jpg"
+            },
+                    {
+                articleOfClothing: "Pink and Purple TieDye Sweatshirt",
+                price: "$12.25",
+                image: "Images/tiedyesweater.jpg"
+            },
+                    {
+                articleOfClothing: "Vintage Sweater",
+                price: "$20.00",
+                image: "Images/fallsweater.jpg"
+            },
+                    {
+                articleOfClothing: "Mickey Flower Sweatshirt",
+                price: "$10.00",
+                image: "Images/mineysweater.jpg"
+            },
+                    {
+                articleOfClothing: "West Coast Vintage Sweater",
+                price: "$25.00",
+                image: "Images/westcoastsweater.jpg"
+            },
+        ];
+   });
+ngDemo.
+ngDemo.controller('pantController', function($scope)
+    {
+    $scope.characters =
+        [
+            {
+            
+            }
+        ];
+   });
+ngDemo.controller('shoeController', function($scope)
+    {
+    $scope.characters =
+        [
+            {
+            
+            }
+        ];
+   });
 ngDemo.controller('inputController', function($scope) 
     {
     $scope.firstName = "";
