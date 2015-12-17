@@ -1,3 +1,13 @@
+
+
+$(document).on('click','.navbar-collapse.in',function(e)
+    {
+    if( $(e.target).is('a') ) 
+        {
+        $(this).collapse('hide');
+        }
+    });
+
 $(window).load(function(){
 $('#myModal').modal('show');
 });
@@ -12,36 +22,31 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/home.html',
               controller  : 'mainController'
 			  })
-        .when('/cost', 
-              {
-              templateUrl : 'pages/cost.html',
-              controller  : 'costController'
-			  })
-            .when('/tanktops', 
+        .when('/tanktops', 
               {
               templateUrl : 'pages/tanktops.html',
               controller  : 'tanktopsController'
               })
-                .when('/sweater', 
+        .when('/sweater', 
               {
               templateUrl : 'pages/sweaters.html',
               controller  : 'sweaterController'
               })
-         .when('/winter', 
+        .when('/pant', 
               {
               templateUrl : 'pages/pant.html',
               controller  : 'pantController'
               })
-           .when('/spring', 
+        .when('/shoe', 
               {
               templateUrl : 'pages/shoe.html',
               controller  : 'shoeController'
               })
-        .when('/input', 
+        .when('/accessories', 
               {
-              templateUrl : 'pages/input.html',
-              controller  : 'inputController'
-			  });
+              templateUrl : 'pages/accessories.html',
+              controller  : 'accessoriesController'
+              });
 	});
 
 ngDemo.controller('mainController', function($scope) 
@@ -49,13 +54,16 @@ ngDemo.controller('mainController', function($scope)
     $scope.message = 'See what cool things Angular can do!';
 	});
 
-ngDemo.controller('costController', function($scope) 
-    {
-    $scope.quantity = 1;
-    $scope.price = 9.99;
-	});
-
 ngDemo.controller('tanktopsController', function($scope)
+    {
+    $scope.characters =
+        [
+            {
+     
+            }
+        ];
+   });
+ngDemo.controller('accessoriesController', function($scope)
     {
     $scope.characters =
         [
@@ -119,20 +127,4 @@ ngDemo.controller('shoeController', function($scope)
             }
         ];
    });
-ngDemo.controller('inputController', function($scope) 
-    {
-    $scope.firstName = "";
-    $scope.lastName = "";
-    $scope.fullName = function() 
-        {
-        return $scope.firstName + " " + $scope.lastName;
-        }
-	});
 
-$(document).on('click','.navbar-collapse.in',function(e)
-    {
-    if( $(e.target).is('a') ) 
-        {
-        $(this).collapse('hide');
-        }
-    });
