@@ -51,7 +51,7 @@ ngDemo.config(function($routeProvider)
 
 ngDemo.controller('mainController', function($scope) 
     {
-    $scope.message = 'See what cool things Angular can do!';
+    $scope.message = 'Check Out The Up To Date Fashion and Accurate Prices! All things shown are in stock in all of stores. All our "mystery" options is where we get to pick for you!';
 	});
 
 ngDemo.controller('tanktopsController', function($scope)
